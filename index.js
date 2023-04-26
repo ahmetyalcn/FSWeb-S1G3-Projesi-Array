@@ -40,11 +40,11 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(orijinalTatlar){
-  let dizi;
-  return  dizi = orijinalTatlar;
+function kopyala(dizi){
+  let yeniDizi = [...dizi];
+  return yeniDizi
 }
-
+console.log(kopyala(orijinalTatlar))
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -257,10 +257,12 @@ const bolgeselTatlar = [
 function rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar,bolgeselTatlar){
   let rastgeleTatlar = [], diziTopla=[] ;
   diziTopla = diziTopla.concat(orijinalTatlar, yeniTatlar, mevsimlikTatlar,bolgeselTatlar);
-  for(let i=0; i<25; i++){
+  let i = 0;
+  while(i<25){
     let toCheck = diziTopla[Math.floor(Math.random() * diziTopla.length)];
     if (!rastgeleTatlar.includes(toCheck)){
       rastgeleTatlar.push(toCheck) 
+      i++;
     }
     
   }
